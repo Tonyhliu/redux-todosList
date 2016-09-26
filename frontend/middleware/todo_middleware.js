@@ -8,5 +8,14 @@ import createLogger from 'redux-logger';
 // it along and do nothing
 
 const logger = createLogger();
-
 let store = createStore(RootReducer, applyMiddleware(logger));
+
+export const TodoMiddleware = (store) => next => action => {
+  switch (action.type) {
+    case REQUEST_TODOS:
+      console.log("here is where todos would be fetched");
+      break;
+    default:
+      return next(action);
+  }
+};
