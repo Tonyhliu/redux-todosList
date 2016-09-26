@@ -1,5 +1,6 @@
 import { requestTodos, receiveTodos, REQUEST_TODOS, RECEIVE_TODOS } from '../actions/todo_actions';
 import RootReducer from '../reducers/root_reducer';
+import { fetchTodos } from '../util/todo_api_util';
 // import createLogger from 'redux-logger';
 
 // middleware set up
@@ -13,8 +14,12 @@ import RootReducer from '../reducers/root_reducer';
 export default ({}) => next => action => {
   switch (action.type) {
     case REQUEST_TODOS:
-      console.log("here is where todos would be fetched");
+      const success = (data) => receiveTodos(data);
+      const error = (e) => console.log(e);
+      fetchTodos(success, error);
       break;
+      // console.log("here is where todos would be fetched");
+      // console.log(fetchTodos);
     default:
       return next(action);
   }

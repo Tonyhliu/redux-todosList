@@ -11,5 +11,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.store = configureStore();
-// window.rt = requestTodos
+window.rt = requestTodos
 window.allTodos = allTodos;
