@@ -7,10 +7,11 @@
 //   });
 // };
 
-export const fetchTodos = function(success){
+export const fetchTodos = function(success, error){
   $.ajax({
     method: 'GET',
     url: 'api/todos',
-    success
+    success,
+    error
   });
 };

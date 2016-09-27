@@ -10,6 +10,7 @@ export const requestTodos = () => ({
 });
 
 export const receiveTodos = todos => ({
+  // console.log("made it to todo actions");
   type: RECEIVE_TODOS,
   todos
 });

@@ -11,10 +11,11 @@ import { fetchTodos } from '../util/todo_api_util';
 // const logger = createLogger();
 // let store = createStore(RootReducer, applyMiddleware(logger));
 
-export default ({}) => next => action => {
+export default ({ getState, dispatch }) => next => action => {
   switch (action.type) {
     case REQUEST_TODOS:
-      const success = (data) => receiveTodos(data);
+      // console.log("Made it to todos middleware");
+      const success = (data) => dispatch(receiveTodos(data));
       const error = (e) => console.log(e);
       fetchTodos(success, error);
       break;
