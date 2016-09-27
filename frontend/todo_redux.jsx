@@ -4,10 +4,11 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { allTodos } from './reducers/selector';
 import { requestTodos, REQUEST_TODOS } from './actions/todo_actions';
+import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>It worked!</h1>, root);
+  ReactDOM.render(<Root />, root);
 });
 
 window.store = configureStore();

@@ -16,8 +16,6 @@ import { RECEIVE_TODOS } from '../actions/todo_actions';
 // };
 
 const TodosReducer = (state = {}, action) => {
-  console.log(state);
-  console.log(action);
   switch (action.type) {
     case RECEIVE_TODOS:
       console.log("made it to reducer");
