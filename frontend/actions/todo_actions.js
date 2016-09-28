@@ -3,6 +3,8 @@
 
 export const REQUEST_TODOS = "REQUEST_TODOS";
 export const RECEIVE_TODOS = "RECEIVE_TODOS";
+export const CREATE_TODO = "CREATE_TODO";
+export const RECEIVE_TODO = "RECEIVE_TODO";
 
 
 export const requestTodos = () => ({
@@ -13,4 +15,14 @@ export const receiveTodos = todos => ({
   // console.log("made it to todo actions");
   type: RECEIVE_TODOS,
   todos
+});
+
+export const createTodo = todo => ({
+  type: CREATE_TODO,
+  todo
+});
+
+export const receiveTodo = todo => ({
+  type: RECEIVE_TODO,
+  todo
 });

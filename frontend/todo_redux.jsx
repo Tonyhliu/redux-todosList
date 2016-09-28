@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // import {fetchTodos} from './util/todo_api_util';
 import configureStore from './store/store';
 import { allTodos } from './reducers/selector';
-import { requestTodos, REQUEST_TODOS } from './actions/todo_actions';
+import { requestTodos, REQUEST_TODOS, createTodo } from './actions/todo_actions';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store}/>, root);
 });
 
-window.rt = requestTodos
-window.store = configureStore();
-window.allTodos = allTodos;
+// window.rt = requestTodos
+// window.store = configureStore();
+// window.allTodos = allTodos;
+// window.ct = createTodo;

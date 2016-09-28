@@ -8,13 +8,13 @@ class TodoListItem extends React.Component {
   }
 
   render() {
-    const { todo } = this.props;
-    const { title } = todo;
+    // const { todo } = this.props;
+    // const { title } = todo;
 
     return(
       <li className="todo-list-item">
         <div className="todo-header">
-          <h2>{title}</h2>
+          <h2>{this.props.todo.title}</h2>
         </div>
       </li>
     );
