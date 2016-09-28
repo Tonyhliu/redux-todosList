@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store}/>, root);
 });
 
-// window.rt = requestTodos
-// window.store = configureStore();
-// window.allTodos = allTodos;
-// window.ct = createTodo;
+window.rt = requestTodos
+window.store = configureStore();
+window.allTodos = allTodos;
+window.ct = createTodo;
