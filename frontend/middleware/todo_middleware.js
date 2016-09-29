@@ -31,11 +31,9 @@ export default ({ getState, dispatch }) => next => action => {
 
   switch (action.type) {
     case REQUEST_TODOS:
-      // console.log("Made it to todos middleware");
+      // makes API calls, then on success, dispatches another action
       fetchTodos(todosSuccess, error);
       break;
-      // console.log("here is where todos would be fetched");
-      // console.log(fetchTodos);
     case CREATE_TODO:
       // hits api util
       createTodo(action.todo, todoSuccess, error)

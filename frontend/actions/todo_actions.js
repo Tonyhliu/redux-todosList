@@ -33,7 +33,7 @@ export const updateTodo = todo => ({
   todo
 });
 
-// reducer
+// goes to reducer:
 
 export const receiveTodos = todos => ({
   // console.log("made it to todo actions");
@@ -45,13 +45,6 @@ export const receiveTodo = todo => ({
   type: RECEIVE_TODO,
   todo
 });
-
-
-export const toggleTodo = todo => ({
-  type: TOGGLE_TODO,
-  todo
-});
-
 
 export const removeTodo = todo => ({
   type: REMOVE_TODO,

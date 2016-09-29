@@ -18,13 +18,11 @@ import { RECEIVE_TODOS, RECEIVE_TODO, REMOVE_TODO } from '../actions/todo_action
 const TodosReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_TODOS:
-      // console.log("made it to reducer");
       let newState = {};
       action.todos.forEach(todo => newState[todo.id] = todo);
       return newState;
     case RECEIVE_TODO:
       // debugger
-      // console.log("hits receive todo in reducer");
       const newTodo = {[action.todo.id]: action.todo}
       return Object.assign({}, state, newTodo); // combines all 3
     case REMOVE_TODO:
