@@ -10,13 +10,10 @@ class TodoForm extends React.Component {
     };
   }
 
-  update(property) {
-    return e => this.setState({[property]: e.target.value})
-  }
-
   handleSubmit() {
     // debugger
-    console.log("hits submit");
+    // console.log("hits submit");
+    // return functions because interpreted right away
     return (e) => {
       e.preventDefault();
       const todo = Object.assign({}, this.state);
@@ -33,7 +30,7 @@ class TodoForm extends React.Component {
             <input className="input"
                     value={this.state.title}
                     placeholder="Do the laundry..."
-                    onChange={this.update("title")}
+                    onChange={(e) => this.setState({title: e.target.value})}
                     required />
 
             </label>
@@ -42,7 +39,7 @@ class TodoForm extends React.Component {
                       cols="20"
                       value={this.state.body}
                       rows="5"
-                      onChange={this.update("body")}
+                      onChange={e => this.setState({body: e.target.value})}
                       required></textarea>
             </label>
             <button className="create-btn">Create Todo!</button>

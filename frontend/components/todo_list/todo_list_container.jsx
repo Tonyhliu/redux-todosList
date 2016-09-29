@@ -5,12 +5,12 @@ import { requestTodos, createTodo } from '../../actions/todo_actions';
 
 const mapStateToProps = state => ({
   todos: allTodos(state)
-});
+}); // passes this down as props
 
 const mapDispatchToProps = dispatch => ({
   requestTodos: () => dispatch(requestTodos()),
   createTodo: todo => dispatch(createTodo(todo))
-});
+}); // gives these functions as props to presentational layer
 
 export default connect(
   mapStateToProps,

@@ -33,6 +33,7 @@ export default ({ getState, dispatch }) => next => action => {
       // console.log("here is where todos would be fetched");
       // console.log(fetchTodos);
     case CREATE_TODO:
+      // hits api util 
       createTodo(action.todo, createSuccess, error)
       break;
     default:

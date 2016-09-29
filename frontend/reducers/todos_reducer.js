@@ -23,6 +23,8 @@ const TodosReducer = (state = {}, action) => {
       action.todos.forEach(todo => newState[todo.id] = todo);
       return newState;
     case RECEIVE_TODO:
+      debugger
+      console.log("hits receive todo in reducer");
       const newTodo = {[action.todo.id]: action.todo}
       return Object.assign({}, state, newTodo); // combines all 3
     default:
