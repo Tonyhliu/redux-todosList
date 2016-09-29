@@ -6,12 +6,17 @@ class TodoListItem extends React.Component {
   constructor(props) {
     super(props);
     // this.toggleDetail = this.toggleDetail.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
 
-  // toggleDetail(e) {
-  //   e.preventDefault();
-  //   this.setState({})
-  // }
+  deleteTodo(e) {
+    const { todo, destroyTodo } = this.props;
+    e.preventDefault();
+    // debugger
+    // Object {id: 21, title: "asd", body: "asd", done: false, created_at: "2016-09-29T19:11:31.007Z"…}
+    destroyTodo(todo)
+  }
+
 
   render() {
     const { todo, toggleTodo, destroyTodo } = this.props;
@@ -25,7 +30,7 @@ class TodoListItem extends React.Component {
                   onClick={toggleTodo(todo)}>
                   {todo.done ? "Undo" : "Done"}
           </button>
-          <button onClick={destroyTodo(todo)}>Delete</button>
+          <button onClick={this.deleteTodo}>Delete</button>
         </div>
       </li>
     );

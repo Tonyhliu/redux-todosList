@@ -4,9 +4,10 @@ import TodoForm from './todo_form';
 
 class TodoList extends React.Component {
   componentDidMount() {
+    const { requestTodos } = this.props
     // debugger
     // console.log("did mount");
-    this.props.requestTodos(); // passed as props from container
+    requestTodos(); // passed as props from container
   }
 
   render() {

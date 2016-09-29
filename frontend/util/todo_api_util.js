@@ -29,7 +29,7 @@ export const createTodo = (todo, success, error) => {
 
 // data: { todo } ??
 export const updateTodo = (todo, success, error) => {
-  debugger
+  // debugger
   // todo here => Object {id: 1, title: "...", etc}
   // put into object for controller params
   $.ajax({
