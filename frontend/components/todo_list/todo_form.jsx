@@ -8,24 +8,21 @@ class TodoForm extends React.Component {
       body: "",
       done: false
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
-    // debugger
-    // console.log("hits submit");
-    // return functions because interpreted right away
-    return (e) => {
-      e.preventDefault();
-      const todo = Object.assign({}, this.state);
-      this.props.createTodo({todo}); // put todo into object
-      this.setState({title: "", body: ""}); // reset form
-    }
+  handleSubmit(e) {
+    e.preventDefault();
+    const todo = Object.assign({}, this.state);
+    this.props.createTodo({todo}); // put todo into object
+    this.setState({title: "", body: ""}); // reset form
   }
 
   render() {
     return(
       <form className="todo-form"
-            onSubmit={this.handleSubmit()}>
+            onSubmit={this.handleSubmit}>
             <label>Title:
             <input className="input"
                     value={this.state.title}
